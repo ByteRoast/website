@@ -1,0 +1,24 @@
+hello:
+  label: Hello
+  permalink: /hello
+  description: Hello tag description
+
+release:
+  label: release
+  permalink: /releases
+  description: List of all releases
+
+music_sharity:
+  label: music sharity
+  permalink: /music-sharity
+  description: All about Music Sharity
+
+android:
+  label: android
+  permalink: /android
+  description: All about android posts
+
+flutter:
+  label: flutter
+  permalink: /flutter
+  description: All about flutter posts

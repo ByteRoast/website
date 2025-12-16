@@ -56,7 +56,8 @@ Music Sharity is currently available on **Android** and **Windows** only. iOS, m
 - **Direct APK**: Download from the [GitHub Releases page](https://github.com/ByteRoast/music-sharity/releases)
 
 ### Windows
-- Download the latest version from the [GitHub Releases page](https://github.com/ByteRoast/music-sharity/releases)
+- Coming soon... (build optimization in progress)
+<!-- - Download the latest version from the [GitHub Releases page](https://github.com/ByteRoast/music-sharity/releases) -->
 
 ## How does it work?
 

@@ -5,7 +5,7 @@ authors: [sikelio]
 tags: [release, music_sharity, android, flutter]
 ---
 
-I'm excited to announce the first release of **Music Sharity** – a cross-platform app that converts music links between different streaming services instantly!
+I'm excited to announce the first release of **Music Sharity** - a cross-platform app that converts music links between different streaming services instantly!
 
 <!-- truncate -->
 
@@ -19,7 +19,7 @@ Picture this: You discover an amazing song on Spotify and want to share it with 
 
 1. ❌ Send them just the title and artist (boring)
 2. ❌ Open Apple Music, search manually, copy the link (exhausting)
-3. ✅ **Use Music Sharity** – instant conversion! 🎉
+3. ✅ **Use Music Sharity** — instant conversion! 🎉
 
 ## What can you share?
 
@@ -35,13 +35,13 @@ Playlists are not supported as they're platform-specific and don't convert well 
 
 Music Sharity currently works with the **top 5 streaming platforms**:
 
-| Platform | Market Share | Support Level |
-|----------|--------------|---------------|
-| **Spotify** | 31% | ✅ Direct API |
-| **Apple Music** | 15% | ✅ Via Odesli |
-| **Deezer** | 2% | ✅ Direct API |
-| **YouTube Music** | 8% | ✅ Via Odesli |
-| **Tidal** | 1% | ✅ Via Odesli |
+| Platform | Market Share |
+|----------|--------------|
+| **Spotify** | 31% |
+| **Apple Music** | 15% |
+| **YouTube Music** | 8% |
+| **Deezer** | 2% |
+| **Tidal** | 1% |
 
 For this first version, I focused on the most popular platforms. More platforms could be added in the future, depending on API availability and community interest!
 
@@ -61,40 +61,39 @@ Music Sharity is currently available on **Android** and **Windows** only. iOS, m
 
 ## How does it work?
 
-Music Sharity uses the **ISRC** (International Standard Recording Code) – a unique identifier attached to every track and album, similar to ISBN for books.
+Music Sharity uses the [Odesli API](https://odesli.co) (also known as song.link) to convert links between platforms. Odesli maintains a database of music across all major streaming services and can match tracks using various identifiers like ISRC codes.
 
 **The conversion process:**
 
-1. Extract the ISRC from the source platform
-2. Search for it on the destination platform via API
-3. Return the converted link (or inform you if not found)
+1. Send the source link to Odesli API
+2. Retrieve all available platform links
+3. Display the converted link for your chosen platform
+
 ```mermaid
 flowchart LR
     PLATFORM[Music streaming platform] -->|Share link| APP(Music Sharity)
-    APP --> EXTRACT[Extract ISRC]
-    EXTRACT --> MENU[Select destination platform]
-    MENU --> SEARCH[Search via API]
-    SEARCH --> FOUND{Found?}
+    APP --> API[Odesli API]
+    API --> MENU[Select destination platform]
+    MENU --> FOUND{Found?}
     FOUND -->|Yes| DIALOG[Share converted link]
     FOUND -->|No| ERR[Content not available]
 ```
 
 ### Technical Details
 
-- **Direct API integration** for Spotify ↔ Deezer (faster, includes metadata)
-- **Odesli API** for Apple Music, YouTube Music, and Tidal (universal compatibility)
-- **No data collection** – Everything happens on your device
-- **Open source** – Check out the code on [GitHub](https://github.com/ByteRoast/music-sharity)!
+- **Odesli API** for all conversions (no API keys required)
+- **No data collection** — Everything happens on your device
+- **No secrets or credentials** — Fully transparent, open source friendly
+- Check out the code on [GitHub](https://github.com/ByteRoast/music-sharity)!
 
 ## Features
 
 - 🎵 Convert between 5 platforms
 - 📀 Support for tracks and albums
-- 🔄 Fast conversion with direct API integration
+- 🔄 Fast conversion powered by Odesli
 - 📱 Native Android sharing (appears in the share menu!)
-- 🎨 Modern Material Design 3 dark theme
-- 🔒 Privacy-focused (no tracking, no analytics)
-- 🆓 Free and Open Source (GPL v3)
+- 🎨 Modern dark theme
+- 🔒 Privacy-focused (no tracking, no analytics, no API keys)
 
 ## Why "Music Sharity"?
 

@@ -2,7 +2,7 @@
 slug: introducing-music-sharity-1.0.0
 title: Introducing Music Sharity 1.0.0
 authors: [sikelio]
-tags: [release, music_sharity, android, flutter]
+tags: [release, music_sharity, android, flutter, pwa]
 ---
 
 I'm excited to announce the first release of **Music Sharity** - a cross-platform app that converts music links between different streaming services instantly!
@@ -17,9 +17,9 @@ I'm excited to announce the first release of **Music Sharity** - a cross-platfor
 
 Picture this: You discover an amazing song on Spotify and want to share it with a friend. But they use Apple Music. Your options?
 
-1. ❌ Send them just the title and artist (boring)
-2. ❌ Open Apple Music, search manually, copy the link (exhausting)
-3. ✅ **Use Music Sharity** — instant conversion! 🎉
+1. Send them just the title and artist (boring)
+2. Open Apple Music, search manually, copy the link (exhausting)
+3. **Use Music Sharity** – instant conversion!
 
 ## What can you share?
 
@@ -47,17 +47,26 @@ For this first version, I focused on the most popular platforms. More platforms 
 
 ## How can I get Music Sharity?
 
-:::warning Platform Availability
-Music Sharity is currently available on **Android** and **Windows** only. iOS, macOS, and Linux builds are functional but not officially maintained due to hardware limitations. Community contributions are welcome!
-:::
+Music Sharity is available on multiple platforms:
+
+### Web (PWA)
+Try it instantly in your browser at **[music-sharity.byteroast.fr](https://music-sharity.byteroast.fr)**
+
+You can also install it as a Progressive Web App (PWA) on Android:
+1. Open the website in Chrome
+2. Tap "Install" or "Add to Home Screen"
+3. Music Sharity will appear in your share menu!
 
 ### Android
 - **Google Play Store**: Coming soon...
 - **Direct APK**: Download from the [GitHub Releases page](https://github.com/ByteRoast/music-sharity/releases)
 
 ### Windows
-- Coming soon... (build optimization in progress)
-<!-- - Download the latest version from the [GitHub Releases page](https://github.com/ByteRoast/music-sharity/releases) -->
+- **Installer**: Coming soon (build optimization in progress)
+
+:::warning Platform Availability
+iOS, macOS, and Linux builds are functional but not officially maintained due to hardware limitations. Community contributions are welcome!
+:::
 
 ## How does it work?
 
@@ -81,24 +90,44 @@ flowchart LR
 
 ### Technical Details
 
-- **Odesli API** for all conversions (no API keys required)
-- **No data collection** — Everything happens on your device
-- **No secrets or credentials** — Fully transparent, open source friendly
-- Check out the code on [GitHub](https://github.com/ByteRoast/music-sharity)!
+Music Sharity is built with privacy and transparency as core principles:
+
+**Native Apps (Android, Windows)**
+- Direct API calls to Odesli
+- Zero intermediaries
+- No data collection
+
+**Web App (PWA)**
+- Privacy-first CORS proxy via [Cloudflare Workers](https://workers.cloudflare.com)
+- Zero logging, zero tracking
+- Stateless edge computing
+- [Open source proxy code](https://github.com/ByteRoast/music-sharity-proxy)
+
+**Common Features**
+- No API keys required
+- No user data collection
+- No tracking or analytics
+- Fully open source (GPL v3)
+
+:::info Why a proxy for web?
+Web browsers enforce CORS (Cross-Origin Resource Sharing) policies that prevent direct API calls to external services. The Cloudflare Worker proxy exists solely to bypass this browser limitation while maintaining our zero-logging privacy commitment.
+:::
 
 ## Features
 
-- 🎵 Convert between 5 platforms
-- 📀 Support for tracks and albums
-- 🔄 Fast conversion powered by Odesli
-- 📱 Native Android sharing (appears in the share menu!)
-- 🎨 Modern dark theme
-- 🔒 Privacy-focused (no tracking, no analytics, no API keys)
+- Convert between 5 platforms (Spotify, Apple Music, YouTube Music, Deezer, Tidal)
+- Support for tracks and albums
+- Fast conversion powered by Odesli
+- Native Android sharing (appears in the share menu)
+- Progressive Web App support
+- Modern dark theme with Material Design 3
+- Privacy-focused (no tracking, no analytics, no data collection)
+- Cross-platform (Web, Android, Windows)
 
 ## Why "Music Sharity"?
 
 The name is a blend of:
-- **Music** (obvious, I hope! 😄)
+- **Music** (obvious!)
 - **Share** + **Charity** = **Sharity**
 
 The idea is to *share* music across platforms in the spirit of generosity and openness.
@@ -115,28 +144,54 @@ The idea is to *share* music across platforms in the spirit of generosity and op
 
 Here's what's planned for future releases:
 
-- 🎵 Additional platforms
-- 💾 Conversion history
-- 🖼️ Album artwork display
-- 🌍 Internationalization (French, German)
-- 🍎 iOS support (need Mac contributors!)
+- Additional streaming platforms
+- Conversion history
+- Album artwork display
+- Internationalization (French, German)
+- iOS support (need Mac contributors)
+- Inno Setup installer for Windows
+
+## Privacy Commitment
+
+Music Sharity is built with privacy as a core principle:
+
+- **No user accounts** - Just open and use
+- **No tracking** - Zero analytics or telemetry
+- **No data storage** - Everything happens in real-time
+- **Open source** - Audit the code yourself
+- **Transparent infrastructure** - Even our web proxy is [open source](https://github.com/ByteRoast/music-sharity-proxy)
+
+Read our complete [Privacy Policy](https://music-sharity.byteroast.fr/privacy.html) for details.
 
 ## Contributing
 
-Music Sharity is **open source** (GPL v3)! Contributions are welcome, especially for:
+Music Sharity is **open source** (GPL v3). Contributions are welcome, especially for:
 
-- 🍎 iOS/macOS support (need Mac owners!)
-- 🐧 Linux packaging (AppImage, Snap, Flatpak)
-- 🌐 Web optimization
-- 🎵 New platform integrations
-- 🐛 Bug fixes
+- iOS/macOS support (need Mac owners)
+- Linux packaging (AppImage, Snap, Flatpak)
+- Web optimization
+- New platform integrations
+- Bug fixes and documentation
 
 Check out the [Contributing Guide](https://github.com/ByteRoast/music-sharity/blob/main/CONTRIBUTING.md) to get started!
 
+## Continuous Integration
+
+Every push is automatically tested across all platforms:
+
+[![CI Build Tests](https://github.com/ByteRoast/music-sharity/actions/workflows/build_tests.yml/badge.svg)](https://github.com/ByteRoast/music-sharity/actions/workflows/build_tests.yml)
+
+Our CI pipeline ensures:
+- Android APK builds successfully
+- Web app compiles correctly
+- Windows executable builds without errors
+- Code passes static analysis
+
 ---
 
-**Try Music Sharity today and make music sharing effortless!** 🎵
+**Try Music Sharity today and make music sharing effortless!**
 
-👉 [Download on GitHub](https://github.com/ByteRoast/music-sharity/releases)  
-⭐ [Star the project](https://github.com/ByteRoast/music-sharity)  
-🐛 [Report issues](https://github.com/ByteRoast/music-sharity/issues)
+- [Try the Web App](https://music-sharity.byteroast.fr)
+- [Download on GitHub](https://github.com/ByteRoast/music-sharity/releases)
+- [Star the project](https://github.com/ByteRoast/music-sharity)
+- [Report issues](https://github.com/ByteRoast/music-sharity/issues)

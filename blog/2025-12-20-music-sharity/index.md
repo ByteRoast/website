@@ -2,7 +2,7 @@
 slug: introducing-music-sharity-1.0.0
 title: Introducing Music Sharity 1.0.0
 authors: [sikelio]
-tags: [release, music_sharity, android, flutter, pwa]
+tags: [release, music_sharity, android, windows, linux, flutter, pwa]
 unlisted: true
 ---
 
@@ -59,14 +59,20 @@ You can also install it as a Progressive Web App (PWA) on Android:
 3. Music Sharity will appear in your share menu!
 
 ### Android
-- **Google Play Store**: Coming soon...
+- **Google Play Store**: [Download on Google Play](https://play.google.com/store/apps/details?id=fr.byteroast.music_sharity)
 - **Direct APK**: Download from the [GitHub Releases page](https://github.com/ByteRoast/music-sharity/releases)
 
 ### Windows
-- **Installer**: Coming soon (build optimization in progress)
+- **Installer**: Download from the [GitHub Releases page](https://github.com/ByteRoast/music-sharity/releases)
+
+### Linux
+- **DEB package**: For Debian/Ubuntu-based distributions
+- **RPM package**: For Fedora/RHEL-based distributions
+
+Download both from the [GitHub Releases page](https://github.com/ByteRoast/music-sharity/releases).
 
 :::warning Platform Availability
-iOS, macOS, and Linux builds are functional but not officially maintained due to hardware limitations. Community contributions are welcome!
+iOS and macOS builds are functional but not officially maintained due to hardware limitations. Community contributions are welcome!
 :::
 
 ## How does it work?
@@ -93,7 +99,7 @@ flowchart LR
 
 Music Sharity is built with privacy and transparency as core principles:
 
-**Native Apps (Android, Windows)**
+**Native Apps (Android, Windows, Linux)**
 - Direct API calls to Odesli
 - Zero intermediaries
 - No data collection
@@ -123,7 +129,7 @@ Web browsers enforce CORS (Cross-Origin Resource Sharing) policies that prevent 
 - Progressive Web App support
 - Modern dark theme with Material Design 3
 - Privacy-focused (no tracking, no analytics, no data collection)
-- Cross-platform (Web, Android, Windows)
+- Cross-platform (Web, Android, Windows, Linux)
 
 ## Why "Music Sharity"?
 
@@ -150,7 +156,6 @@ Here's what's planned for future releases:
 - Album artwork display
 - Internationalization (French, German)
 - iOS support (need Mac contributors)
-- Inno Setup installer for Windows
 
 ## Privacy Commitment
 
@@ -169,8 +174,7 @@ Read our complete [Privacy Policy](https://music-sharity.byteroast.fr/privacy.ht
 Music Sharity is **open source** (GPL v3). Contributions are welcome, especially for:
 
 - iOS/macOS support (need Mac owners)
-- Linux packaging (AppImage, Snap, Flatpak)
-- Web optimization
+- Web optimizations
 - New platform integrations
 - Bug fixes and documentation
 
@@ -186,6 +190,7 @@ Our CI pipeline ensures:
 - Android APK builds successfully
 - Web app compiles correctly
 - Windows executable builds without errors
+- Linux packages (DEB/RPM) build correctly
 - Code passes static analysis
 
 ---

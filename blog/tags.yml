@@ -16,9 +16,19 @@ music_sharity:
 android:
   label: android
   permalink: /android
-  description: All about android posts
+  description: All about Android posts
 
 flutter:
   label: flutter
   permalink: /flutter
-  description: All about flutter posts
+  description: All about Flutter posts
+
+linux:
+  label: linux
+  permalink: /linux
+  description: All about Linux posts
+
+windows:
+  label: windows
+  permalink: /windows
+  description: All about Windows posts

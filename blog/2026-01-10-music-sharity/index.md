@@ -1,5 +1,5 @@
 ---
-slug: introducing-music-sharity-1.0.0
+slug: music-sharity-1.0.0
 title: Introducing Music Sharity 1.0.0
 authors: [sikelio]
 tags: [release, music_sharity, android, windows, linux, flutter, pwa]

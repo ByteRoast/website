@@ -11,7 +11,7 @@ release:
 music_sharity:
   label: music sharity
   permalink: /music-sharity
-  description: All about Music Sharity
+  description: Updates, releases and news about Music Sharity, the cross-platform app that converts music links between streaming services
 
 android:
   label: android
@@ -32,3 +32,8 @@ windows:
   label: windows
   permalink: /windows
   description: All about Windows posts
+
+pwa:
+  label: pwa
+  permalink: /pwa
+  description: All about Progressive Web Apps
